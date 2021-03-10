@@ -31,12 +31,14 @@ public class appCardDeliveryTest {
 
 
         $("[data-test-id=city] .input__control").setValue(user1.getCity());
-        $("[data-test-id=date] .input__control[value]").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        $("[data-test-id=city] .input__control").setValue(user1.getLocalDate());
-
+        $("[data-test-id=date] .input__control[value]").sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE);
+        $("[data-test-id=date] .input__control").setValue(user1.getLocalDate());
         $("[data-test-id=name] .input__control").setValue(user1.getName());
         $("[data-test-id=phone] .input__control").setValue(user1.getPhone());
         $("[data-test-id=agreement] .checkbox__box").click();
+        $(".button .button__text").click();
+
+
         $(".button .button__text").click();
         $$(".button .button__text").find(exactText("Перепланировать")).click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(6));
