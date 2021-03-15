@@ -1,14 +1,13 @@
 package ru.netology.web;
 
-import com.codeborne.selenide.Condition;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -27,7 +26,6 @@ public class appCardDeliveryTest {
         open("http://0.0.0.0:9999/");
 
         User user1 = DataGenerator.Registration.usersRegistration();
-        DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
 
         $("[data-test-id=city] .input__control").setValue(user1.getCity());
