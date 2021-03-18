@@ -23,7 +23,7 @@ public class appCardDeliveryTest {
 
     @Test
     void shouldRegisterByOrderCard() {
-        open("http://0.0.0.0:9999/");
+        open("http://localhost:9999/");
 
         User user1 = DataGenerator.Registration.usersRegistration();
 
